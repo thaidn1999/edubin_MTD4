@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- cdn slick slider -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <!-- cdn tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- style css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+      tailwind.config = {
+        mode: "jit",
+        theme: {
+          extend: {
+            container: {
+              padding: "16px",
+              screens: {
+                sm: "540px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1200px",
+              },
+            },
+            colors: {
+              primary: "#ffc600",
+              secondary: "#07294d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Register</title>
+  </head>
+  <body>
+    <div id="wrapper" class="relative">
+      <header id="header" class="bg-white fixed w-full z-50 left-0 top-0">
+        <!-- header-contact -->
+        <div
+          class="header-top fixed w-full bg-secondary py-[15px] text-[#edf0f2]"
+        >
+          <div class="container mx-auto">
+            <div class="header-top__left hidden md:inline-block float-left">
+              <ul>
+                <li class="mr-5">
+                  <i class="fa fa-envelope pr-1 relative top-[2px]"></i>
+                  <a href="#" class="hover:text-primary"> info@yoursite.com </a>
+                </li>
+                <li class="mr-5">
+                  <span>
+                    <i class="fa fa-phone pr-1 relative top-[2px]"></i>
+                    +0123-456-5678
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="header-top__right flex justify-center lg:justify-end items-center"
+            >
+              <div class="header-top__right--social mr-5">
+                <span class="hidden md:inline-block">Follow us:</span>
+                <ul class="ml-[2px] inline float-right">
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-facebook-f hover:text-primary">
+                      </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-instagram hover:text-primary"> </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-twitter hover:text-primary"> </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-youtube hover:text-primary"> </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-top__login-register relative">
+                <ul>
+                  <li class="leading-[22px]">
+                    <a href="#" class="text-primary hover:text-white">Login</a>
+                  </li>
+                  <li class="px-2">/</li>
+                  <li class="leading-[22px]">
+                    <a
+                      href="register.html"
+                      class="text-primary hover:text-white"
+                    >
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- header-navbar -->
+        <div class="header-main pt-[54px]">
+          <div class="container mx-auto">
+            <div class="header-main__logo py-4 relative z-10 inline-block">
+              <a href="#" class="pr-4 w-auto">
+                <img
+                  src="./assets/images/logo.png"
+                  alt="logo"
+                  class="max-w-[180px] max-h-[200px] inline-block"
+                />
+              </a>
+            </div>
+            <div class="header-main__icon inline-block ml-[30px] float-right">
+              <ul>
+                <li class="py-7 mr-[2px]">
+                  <a href="#" id="search-icon" class="relative text-base pr-2">
+                    <i class="fa fa-search text-secondary text-[24px]"></i>
+                  </a>
+                </li>
+                <li class="py-7">
+                  <a
+                    href="#"
+                    id="cart-icon"
+                    class="relative text-base pr-2 text-secondary"
+                  >
+                    <i class="fa fa-shopping-bag text-[24px]"></i>
+                    <span
+                      class="absolute text-secondary w-[18px] h-[18px] leading-5 text-sm text-center rounded-[50%] px-1 right-0 bg-primary text-xs bottom-3 inline-block flex justify-center items-center"
+                    >
+                      0
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="toggle-icon float-right lg:hidden cursor-pointer">
+              <i
+                class="fa-solid fa-bars text-[24px] h-[80px] leading-[80px] text-secondary"
+              >
+              </i>
+            </span>
+            <div class="menu-container hidden lg:block lg:float-right">
+              <ul class="menu-list">
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    HOME
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Home Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    COURSES
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Course Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    PAGES
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Pages Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    EVENTS
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Event Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    BLOG
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Blog Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    SHOP
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Shop Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    CONTACT
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="content-page" class="mt-20 sm:mt-[140px]">
+        <div class="search-box hidden">
+          <div class="search-form">
+            <div class="closebtn">
+              <div class="bar1"></div>
+              <div class="bar3"></div>
+            </div>
+            <form action="#">
+              <input type="text" placeholder="Search by keyword" />
+              <button>
+                <i class="fa fa-search text-secondary"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <section
+          id="register-banner"
+          class="relative text-left text-white flex items-center py-6 min-h-[290px] bg-[url('./assets/images/register-banner.jpg')] bg-no-repeat bg-cover bg-center before:bg-secondary before:absolute before:content-[''] before:w-full before:h-full before:top-0 before:left-0 before:right-0 before:opacity-90"
+        >
+          <div class="container mx-auto relative">
+            <h2 class="text-[46px] font-bold">LP Profile</h2>
+            <div class="pt-4">
+              <ul class="flex">
+                <li class="">
+                  <a
+                    href="index.html"
+                    class="after:content-['\002F'] after:px-2"
+                  >
+                    <span> Home </span>
+                  </a>
+                </li>
+                <li class=""><span>LP Profile</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 bg-[#edf0f2]">
+          <div class="container mx-auto">
+            <div class="bg-white rounded-[5px] bg-white px-12 py-12">
+              <form id="form-register">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4">
+                  <div class="form-group">
+                    <label for="firstNameInp" class="block text-[#1d2025]">
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        First Name:
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      id="firstNameInp"
+                      class="mb-4 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastNameInp" class="block text-[#1d2025]">
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        Last Name:
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      id="lastNameInp"
+                      class="mb-4 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="userNameInp" class="block text-[#1d2025]">
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        User Name:
+                      </span>
+                    </label>
+                    <input
+                      type="text"
+                      name="userName"
+                      placeholder="User Name"
+                      id="userNameInp"
+                      class="mb-4 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="emailInp" class="block text-[#1d2025]">
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        Email:
+                      </span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      id="emailInp"
+                      class="block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                    <spn class="hidden">
+                      Please provide a valid email address.
+                    </spn>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="passWordInp" class="block text-[#1d2025]">
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        PassWord:
+                      </span>
+                    </label>
+                    <input
+                      type="password"
+                      name="passWord"
+                      placeholder="PassWord"
+                      id="passWordInp"
+                      class="mb-4 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label
+                      for="confirmPassWordInp"
+                      class="block text-[#1d2025]"
+                    >
+                      <span
+                        class="block mb-2 text-sm font-medium text-slate-700"
+                      >
+                        Confirm PassWord
+                      </span>
+                    </label>
+                    <input
+                      type="password"
+                      placeholder="Confirm PassWord"
+                      name="confirmPassWord"
+                      id="confirmPassWordInp"
+                      class="mb-4 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+                    />
+                  </div>
+                </div>
+                <div class="pt-4 pb-8">
+                  <button
+                    id="btnRegister"
+                    class="float-right bg-secondary hover:bg-[#08325e] px-5 py-2.5 text-base leading-6 rounded-md text-white transition-all duration-400 ease-linear"
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <!-- top-footer -->
+        <section
+          id="footer-top"
+          class="pt-[80px] lg:pt-[40px] pb-[80px] bg-secondary"
+        >
+          <div class="container mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 lg:gap-4 text-white"
+            >
+              <div class="lg:col-span-4">
+                <div class="footer-top__about lg:mt-[40px] pr-[50px]">
+                  <div class="footer-top__logo">
+                    <a href="#">
+                      <img src="./assets/images/logo-2.png" alt="Logo" />
+                    </a>
+                  </div>
+                  <p class="pt-4 text-base leading-[28px]">
+                    Gravida nibh vel velit auctor aliquetn quibibendum auci elit
+                    cons equat ipsutis sem nibh id elit. Duis sed odio sit amet
+                    nibh vulputate.
+                  </p>
+                  <ul class="mt-[20px]">
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-facebook-f"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-youtube"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-instagram"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-twitter"> </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="lg:col-span-3">
+                <div class="footer-top__link lg:mt-[40px]">
+                  <div class="ft__link--title my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Feature Link</h6>
+                  </div>
+                  <div class="grid grid-cols-2">
+                    <ul class="grid grid-cols-1">
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            About Us
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Graduation
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Scholarship
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Contact
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Result
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="grid grid-cols-1">
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Admissions
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            International
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Teachers
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Alumni
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Events
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-2">
+                <div class="footer-top__link lg:mt-[40px]">
+                  <div class="ft__link--title my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Support</h6>
+                  </div>
+                  <ul class="flex flex-col">
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Languages
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          WordPress
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Privacy
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          FAQs
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Support
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="lg:col-span-3">
+                <div class="footer-top__address lg:mt-[40px]">
+                  <div class="ft__address--contact my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Contact Us</h6>
+                  </div>
+                  <ul class="text-base md:grid md:grid-cols-1">
+                    <li>
+                      <p class="pb-4">
+                        203, Envato Labs, Behind Alis Steet, Melboure,
+                        Australia.
+                      </p>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa fa-phone mr-2"></i>
+                        <span>+1 23-4567-8920</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa-solid fa-envelope mr-2"></i>
+                        <span>info@yourmail.com</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa-solid fa-globe mr-2"></i>
+                        <span>www.yourdomain.com</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="footer-bottom" class="pt-6 pb-8 bg-[#021d3a] text-white">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="lg:float-left text-center lg:text-left">
+                <p>&copy; 2021 Pixelcurve. All rights reversed.</p>
+              </div>
+              <div class="float-right hidden lg:inline-block">
+                <ul class="flex justify-end">
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">Languages</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">WordPress</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">Privacy</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">FAQs</a>
+                  </li>
+                  <li class="px-3">
+                    <a href="#" class="hover:text-primary">Support</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+      <div id="back-to-top">
+        <a
+          href="#"
+          class="back-to-top fixed bg-primary bottom-10 right-10 text-center w-10 h-10 leading-10 text-secondary rounded-[50%] opacity-0 z-50"
+        >
+          <i class="fa-solid fa-angle-up"></i>
+        </a>
+      </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/validate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary-color: #ffc600;
+  --secondary-color: #07294d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #505050;
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  display: inline-block;
+  font-size: 16px;
+  transition: all ease 0.5s;
+}
+span,
+li {
+  display: inline-block;
+}
+/* icon drop down menu navbar */
+.fa-chevron-down::before {
+  font-size: 10px;
+}
+/* main-button  */
+.main-btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 0 35px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  line-height: 50px;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  overflow: hidden;
+  z-index: 5;
+  transition: 0.4s ease-in-out;
+  background-color: var(--primary-color);
+}
+/* Active */
+.active {
+  color: var(--primary-color) !important;
+}
+/* Toggle - Active */
+.show {
+  display: block;
+}
+/* header navbar menu */
+@media screen and (min-width: 1024px) {
+  .menu-list li:hover ul {
+    display: block;
+    transition: all ease-linear 0.4s;
+  }
+}
+.search-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 41, 77, 0.5);
+  z-index: 9999;
+}
+.search-box .search-form input {
+  position: absolute;
+  width: 50%;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding-left: 20px;
+  border-radius: 30px;
+}
+.search-box .search-form input:focus {
+  outline: none;
+}
+.search-box .search-form button {
+  position: absolute;
+  top: 50%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.closebtn {
+  position: absolute;
+  top: 28px;
+  right: 56px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+.bar1,
+.bar3 {
+  width: 30px;
+  height: 2px;
+  background-color: var(--secondary-color);
+  display: block;
+  margin: 5px 0;
+  position: relative;
+  transition: all 0.4s linear;
+}
+.closebtn .bar1 {
+  transform: rotate(46deg) translate(4px, 6px);
+  transition-delay: 0.1s;
+  background-color: white;
+}
+.closebtn .bar3 {
+  transform: rotate(134deg) translate(2px, 2px);
+  background-color: white;
+  transition-delay: 0.1s;
+}
+
+/*------- banner-slider------- */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slick-arrow i {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  line-height: 44px;
+  border-radius: 50%;
+  border: 2px solid white;
+  text-align: center;
+  transition: all 0.5s linear;
+}
+
+.slick-arrow i:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.slick-prev {
+  transition: all 0.3s;
+  left: -50px;
+  z-index: 10;
+}
+.slick-next {
+  transition: all 0.3s;
+  right: -50px;
+  z-index: 10;
+}
+.slick-slider:hover .slick-prev {
+  transition: all 0.5s;
+  left: 30px;
+}
+.slick-slider:hover .slick-next {
+  transition: all 0.5s;
+  right: 30px;
+}
+.slider-content ul li:first-child {
+  margin-right: 1rem;
+}
+
+/*---- course-slider----- */
+
+.slick-arrow-course i {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  background-color: #557495;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s linear;
+}
+.slick-arrow-our-course i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.4s linear;
+  border: 1px solid #cecece;
+  z-index: 10;
+}
+.slick-arrow-our-course {
+  position: absolute;
+  top: -60px;
+}
+.slick--course i {
+  border-radius: 5px;
+  background-color: none;
+  border: 1px solid #557495;
+}
+.slick-slide img {
+  display: inline-block;
+}
+.slick-left {
+  transition: all 0.3s;
+  left: -50px;
+}
+.slick-right {
+  transition: all 0.3s;
+  right: -50px;
+}
+.slick-source-prev {
+  transition: all 0.3s;
+  right: 70px;
+}
+.slick-source-next {
+  transition: all 0.3s;
+  right: 20px;
+}
+@media screen and (max-width: 540px) {
+  .slick-arrow-our-course {
+    top: -36px;
+  }
+}
+/* slick-dots */
+.slick-dots {
+  margin-top: 16px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-dots li {
+  display: inline-block;
+  margin-top: 15px;
+}
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 0;
+  padding: 0;
+  border: 0;
+  margin: 0 6px;
+  cursor: pointer;
+}
+.slick-dots li button .slick-active {
+  background-color: var(--primary-color);
+}
+
+.under-title::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+}
+
+.about-us__right {
+  box-shadow: 0px 0px 191px 0px rgb(0 0 0 / 6%);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.about-us__right--event {
+  border-bottom: 1px solid #cecece;
+}
+.about-us__right ul li:last-child .about-us__right--event {
+  border: none;
+}
+.book-hover {
+  background-color: rgba(0, 33, 71, 0.8);
+  content: "";
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.book-item:hover .book-hover {
+  opacity: 1;
+}
+.book-item:hover .book-item__inner-cart {
+  opacity: 1;
+  z-index: 2;
+}
+/* animation banner */
+/*----- apply -----*/
+.apply-content .main-btn:hover {
+  border: 1px solid var(--primary-color);
+}
+/* -----our source -----*/
+.our-source__cart {
+  border-top: 1px solid #e0e0e0;
+}
+/* -----book store---- */
+.book-img__inner {
+  background-color: rgba(7, 41, 77, 0.8);
+}
+.book-img:hover .book-img__inner {
+  opacity: 1;
+}
+.book-img__inner ul li a {
+  border: 1px solid var(--primary-color);
+}

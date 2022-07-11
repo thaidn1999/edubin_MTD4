@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- cdn slick slider -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- cdn tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- cdn axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- style css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+      tailwind.config = {
+        mode: "jit",
+        theme: {
+          extend: {
+            screens: {
+              sm: "540px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1200px",
+            },
+            container: {
+              padding: "16px",
+              screens: {
+                sm: "540px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1200px",
+              },
+            },
+            colors: {
+              primary: "#ffc600",
+              secondary: "#07294d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Edubin</title>
+  </head>
+  <body>
+    <div id="wrapper" class="relative">
+      <header id="header" class="bg-white fixed w-full z-50 left-0 top-0">
+        <!-- header-contact -->
+        <div
+          class="header-top fixed w-full bg-secondary py-[15px] text-[#edf0f2]"
+        >
+          <div class="container mx-auto">
+            <div class="header-top__left hidden md:inline-block float-left">
+              <ul>
+                <li class="mr-5">
+                  <i class="fa fa-envelope pr-1 relative top-[2px]"></i>
+                  <a href="#" class="hover:text-primary"> info@yoursite.com </a>
+                </li>
+                <li class="mr-5">
+                  <span>
+                    <i class="fa fa-phone pr-1 relative top-[2px]"></i>
+                    +0123-456-5678
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="header-top__right flex justify-center lg:justify-end items-center"
+            >
+              <div class="header-top__right--social mr-5">
+                <span class="hidden md:inline-block">Follow us:</span>
+                <ul class="ml-[2px] inline float-right">
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-facebook-f hover:text-primary">
+                      </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-instagram hover:text-primary"> </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-twitter hover:text-primary"> </i>
+                    </a>
+                  </li>
+
+                  <li class="px-2">
+                    <a href="#">
+                      <i class="fa-brands fa-youtube hover:text-primary"> </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-top__login-register relative">
+                <ul>
+                  <li class="leading-[22px]">
+                    <a href="#" class="text-primary hover:text-white">Login</a>
+                  </li>
+                  <li class="px-2">/</li>
+                  <li class="leading-[22px]">
+                    <a
+                      href="register.html"
+                      class="text-primary hover:text-white"
+                    >
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- header-navbar -->
+        <div class="header-main pt-[54px]">
+          <div class="container mx-auto">
+            <div class="header-main__logo py-4 relative z-10 inline-block">
+              <a href="#" class="pr-4 w-auto">
+                <img
+                  src="./assets/images/logo.png"
+                  alt="logo"
+                  class="max-w-[180px] max-h-[200px] inline-block"
+                />
+              </a>
+            </div>
+            <div class="header-main__icon inline-block ml-[30px] float-right">
+              <ul>
+                <li class="py-7 mr-[2px]">
+                  <a href="#" id="search-icon" class="relative text-base pr-2">
+                    <i class="fa fa-search text-secondary text-[24px]"></i>
+                  </a>
+                </li>
+                <li class="py-7">
+                  <a
+                    href="#"
+                    id="cart-icon"
+                    class="relative text-base pr-2 text-secondary"
+                  >
+                    <i class="fa fa-shopping-bag text-[24px]"></i>
+                    <span
+                      class="absolute text-secondary w-[18px] h-[18px] leading-5 text-sm text-center rounded-[50%] px-1 right-0 bg-primary text-xs bottom-3 inline-block flex justify-center items-center"
+                    >
+                      0
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="toggle-icon float-right lg:hidden cursor-pointer">
+              <i
+                class="fa-solid fa-bars text-[24px] h-[80px] leading-[80px] text-secondary"
+              >
+              </i>
+            </span>
+            <div class="menu-container hidden lg:block lg:float-right">
+              <ul class="menu-list">
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    HOME
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Home Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    COURSES
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Course Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    PAGES
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Pages Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    EVENTS
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Event Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    BLOG
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Blog Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    SHOP
+                    <i
+                      class="fa-solid fa-chevron-down hidden lg:inline-block inline-block h-4 relative -top-1 w-4 left-1"
+                    >
+                    </i>
+                    <span class="lg:hidden float-right">
+                      <i class="fa-solid fa-plus"> </i>
+                    </span>
+                  </a>
+                  <ul
+                    id="sub-menu"
+                    class="py-[10px] hidden lg:hidden lg:absolute lg:top-full lg:border-t-2 lg:border-primary lg:border-solid lg:bg-white"
+                  >
+                    <li
+                      class="inline-block relative lg:w-auto w-full lg:border-0 border-t border-solid border-[#d1d1d1]"
+                    >
+                      <a
+                        href="#"
+                        class="inline-block py-2 px-5 w-[232px] hover:pl-6 transition-all duration-400 ease-linear"
+                      >
+                        All Shop Demos
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="list-item-mobile inline-block relative w-full lg:w-auto"
+                >
+                  <a
+                    href="#"
+                    class="text-secondary font-semibold block px-[10px] lg:py-[30px] py-[10px] hover:text-primary lg:border-0 border-t border-solid border-[#d1d1d1]"
+                  >
+                    CONTACT
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="content-page" class="mt-20 sm:mt-[140px]">
+        <!-- search box -->
+        <div class="search-box hidden">
+          <div class="search-form">
+            <div class="closebtn">
+              <div class="bar1"></div>
+              <div class="bar3"></div>
+            </div>
+            <form action="#">
+              <input type="text" placeholder="Search by keyword" />
+              <button>
+                <i class="fa fa-search text-secondary"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- banner -->
+        <section id="banner-slider">
+          <div class="slider-list block overflow-hidden w-full z-10">
+            <div
+              class="slider-item pt-[240px] pb-[240px] relative bg-[url('./assets/images/thumbnail.jpg')] bg-no-repeat bg-cover bg-center"
+            >
+              <div
+                class="absolute content-[''] bg-[#08294D] w-full h-full top-0 left-0 opacity-50"
+              ></div>
+              <div class="container mx-auto">
+                <div class="grid grid-cols-1">
+                  <div class="slider-content text-white z-20">
+                    <div class="relative text-left">
+                      <div class="left-to-right">
+                        <h1
+                          class="text-[28px] sm:text-[40px] lg:text-[48px] xl:text-[60px] pb-[25px] font-bold"
+                        >
+                          Choose The Right
+                          <br />
+                          Theme For Education
+                        </h1>
+                        <span
+                          class="block pr-8 lg:pr-[540px] mb-[30px] text-base sm:text-[18px]"
+                        >
+                          Lorem dummy text of the printing and typesetting
+                          industry lorem ipsum has been the industry's standard
+                          dummy text.
+                        </span>
+                      </div>
+                      <div class="slider-btn">
+                        <div class="slider-btn__prev inline-block">
+                          <a
+                            href="#"
+                            class="block font-semibold border-solid border-2 border-primary px-7 py-3 m-2 rounded-[4px] bg-primary text-secondary hover:text-white hover:bg-secondary hover:border-secondary"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                        <div class="slider-btn__next inline-block">
+                          <a
+                            href="#"
+                            class="block font-semibold border-solid border-2 border-white px-7 py-3 m-2 rounded-[4px] bg-white text-secondary hover:text-white hover:bg-secondary hover:border-secondary"
+                          >
+                            Learn More
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="slider-item pt-[240px] pb-[240px] relative bg-[url('./assets/images/thumbnail2.jpg')] bg-no-repeat bg-cover bg-center"
+            >
+              <div
+                class="absolute content-[''] bg-[#08294D] w-full h-full top-0 left-0 opacity-50"
+              ></div>
+              <div class="container mx-auto">
+                <div class="grid grid-cols-12">
+                  <div class="slider-content col-span-12 text-white z-20">
+                    <div class="relative text-left">
+                      <div class="left-to-right">
+                        <h1
+                          class="text-[28px] sm:text-[40px] lg:text-[48px] xl:text-[60px] pb-[25px] font-bold"
+                        >
+                          Best LMS Education
+                          <br />
+                          WordPress Theme
+                        </h1>
+                        <span
+                          class="block pr-8 lg:pr-[540px] mb-[30px] text-[18px]"
+                        >
+                          Lorem dummy text of the printing and typesetting
+                          industry lorem ipsum has been the industry's standard
+                          dummy text.
+                        </span>
+                      </div>
+                      <div class="slider-btn">
+                        <div class="slider-btn__prev inline-block">
+                          <a
+                            href="#"
+                            class="block font-semibold border-solid border-2 border-primary px-7 py-3 m-2 rounded-[4px] bg-primary text-secondary hover:text-white hover:bg-secondary hover:border-secondary"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                        <div class="slider-btn__next inline-block">
+                          <a
+                            href="#"
+                            class="block font-semibold border-solid border-2 border-white px-7 py-3 m-2 rounded-[4px] bg-white text-secondary hover:text-white hover:bg-secondary hover:border-secondary"
+                          >
+                            Learn More
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- course slider -->
+        <section id="course-slider">
+          <div class="container mx-auto">
+            <div
+              class="course-slider__inner relative w-full text-white bg-secondary rounded-[10px] -mt-40 py-10 lg:py-[60px] px-8 lg:py-[80px] lg:pr-[90px] lg:pl-[72px] z-10"
+            >
+              <div
+                class="container flex flex-col lg:flex-row content-center items-center"
+              >
+                <div class="course-title w-full lg:w-[38%] pb-8">
+                  <h2
+                    class="text-[28px] sm:text-[32px] lg:text-[28px] xl:text-[36px] font-bold leading-[42px] lg:pr-20 md:text-center"
+                  >
+                    Best Platform to Learn Everything
+                  </h2>
+                </div>
+                <div class="w-full sm:w-[80%] lg:w-[62%]">
+                  <div class="course-slider">
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#b5d56a] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Programs
+                        </span>
+                      </a>
+                    </div>
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#fe6f6f] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Events
+                        </span>
+                      </a>
+                    </div>
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#4885fe] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Admissions
+                        </span>
+                      </a>
+                    </div>
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#b5d56a] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Programs
+                        </span>
+                      </a>
+                    </div>
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#fe6f6f] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Events
+                        </span>
+                      </a>
+                    </div>
+                    <div class="course-item">
+                      <a
+                        href="#"
+                        class="block text-center py-[20px] rounded-[5px] bg-[#4885fe] mx-[15px]"
+                      >
+                        <img
+                          src="./assets/images/programs.png"
+                          class="w-[80px] h-[80px]"
+                          alt=""
+                        />
+                        <span class="block pt-4 text-[18px] font-bold">
+                          Admissions
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About us -->
+        <section
+          id="about-us"
+          class="relative bg-[url('./assets/images/bg-1.png')] lg:bg-right bg-bottom bg-no-repeat pt-24 mb-24"
+        >
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="about-us__left text-left lg:pr-[90px]">
+                <div class="flex flex-wrap">
+                  <div class="about-us__left--title mb-5">
+                    <h5
+                      class="under-title relative text-secondary text-[18px] font-bold pb-[12px]"
+                    >
+                      About Us
+                    </h5>
+                    <h2
+                      class="text-[35px] lg:text-[38px] xl:text-[48px] text-[#23252a] font-bold pt-4"
+                    >
+                      Welcome to Edubin
+                    </h2>
+                  </div>
+                  <div class="about-us__left--content">
+                    <p
+                      class="text-base font-normal text-[#7a7a7a] leading-6 lg:leading-7 mb-4"
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Labore corporis praesentium, neque soluta nesciunt,
+                      accusamus autem perferendis es reprehenderit quam
+                      similique tempora voluptates aut quis.
+                    </p>
+                    <p
+                      class="text-base font-normal text-[#7a7a7a] leading-6 lg:leading-7 mb-4"
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Labore corporis praesentium, neque soluta nesciunt,
+                      accusamus autem perferendis es reprehenderit quam
+                      similique tempora voluptates aut quis.
+                    </p>
+                    <p
+                      class="text-base font-normal text-[#7a7a7a] leading-6 lg:leading-7 mb-4"
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Labore corporis praesentium, neque soluta nesciunt,
+                      accusamus autem perferendis es reprehenderit quam
+                      similique tempora voluptates aut quis.
+                    </p>
+                  </div>
+                  <div class="about-us__left--btn">
+                    <a
+                      href="#"
+                      class="main-btn mt-[30px] hover:text-white hover:bg-secondary"
+                    >
+                      Explore More
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="about-us__right mt-[50px]">
+                <div
+                  class="flex flex-wrap z-10 p-[35px] lg:px-[50px] lg:py-[40px]"
+                >
+                  <div class="about-us__right--title">
+                    <h3
+                      class="text-[36px] font-bold leading-tight text-[#23252a] pb-[32px]"
+                    >
+                      Upcoming Events
+                    </h3>
+                  </div>
+                  <div class="about-us__event">
+                    <ul>
+                      <li>
+                        <div class="about-us__right--event pb-[25px]">
+                          <a href="#" class="block">
+                            <h4
+                              class="text-[24px] text-[#23252a] font-bold transition-all duration-300 ease-linear hover:text-primary"
+                            >
+                              World University Convocation
+                            </h4>
+                          </a>
+                          <span
+                            class="inline-block text-[14px] text-[#8a8a8a] mr-[20px] py-[8px]"
+                          >
+                            <i
+                              class="fa-solid fa-calendar-days mr-[3px] text-primary"
+                            >
+                            </i>
+                            12:00 AM To 11:59 PM
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="about-us__right--event py-[25px]">
+                          <span
+                            class="inline-block text-[14px] text-[#8a8a8a] mr-[20px]"
+                          >
+                            <i class="fa-solid fa-clock mr-[3px] text-primary">
+                            </i>
+                            31. May
+                          </span>
+                          <a href="#" class="block">
+                            <h4
+                              class="text-[24px] text-[#23252a] font-bold transition-all duration-300 ease-linear hover:text-primary"
+                            >
+                              February Education Conferences
+                            </h4>
+                          </a>
+                          <span
+                            class="inline-block text-[14px] text-[#8a8a8a] mr-[20px] py-[8px]"
+                          >
+                            <i class="fa-solid fa-clock mr-[3px] text-primary">
+                            </i>
+                            12:00 AM To 1:30 PM
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="about-us__right--event py-[25px]">
+                          <a href="#" class="block">
+                            <h4
+                              class="text-[24px] text-[#23252a] font-bold transition-all duration-300 ease-linear hover:text-primary"
+                            >
+                              The Games Education Summit
+                            </h4>
+                          </a>
+                          <span
+                            class="inline-block text-[14px] text-[#8a8a8a] mr-[20px] py-[8px]"
+                          >
+                            <i class="fa-solid fa-clock mr-[3px] text-primary">
+                            </i>
+                            12:00 AM To 11:59 PM
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Apply -->
+        <section id="apply" class="pb-24">
+          <div class="container mx-auto">
+            <div class="relative grid grid-cols-1 lg:grid-cols-2">
+              <div
+                class="apply-left bg-secondary mb-8 lg:mb-0 lg:rounded-tl-md lg:rounded-bl-md"
+              >
+                <div class="apply-content p-[25px] lg:p-[50px]">
+                  <h3 class="text-[28px] text-white pb-4 font-bold">
+                    Apply for Fall 2019
+                  </h3>
+                  <p
+                    class="text-white pb-10 text-base font-normal leading-[28px]"
+                  >
+                    Gravida nibh vel velit auctor aliquetn sollicitudirem sem
+                    quibibendum auci elit cons equat ipsutis sem nibh id elituis
+                    sed odio sit amet nibh vulputate cursus equat ipsutis.
+                  </p>
+                  <a href="#" class="main-btn">Apply Now</a>
+                </div>
+              </div>
+              <div
+                class="apply-right bg-[#092e56] lg:rounded-tr-md lg:rounded-br-md"
+              >
+                <div class="apply-content p-[25px] lg:p-[50px]">
+                  <h3 class="text-[28px] text-white pb-4 font-bold">
+                    Apply for scholarship
+                  </h3>
+                  <p
+                    class="text-white pb-10 text-base font-normal leading-[28px]"
+                  >
+                    Sollicitudirem sem quibibendum auci elit cons equat ipsutis
+                    sem nibh id elituis sed odio sit amet nibh vulputate cursus
+                    equat ipsutis gravida nibh vel velit auctor aliquetn.
+                  </p>
+                  <a href="#" class="main-btn">Apply Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Our course -->
+        <section
+          id="our-course"
+          class="pt-24 pb-10 lg:pb-24 bg-[url('./assets/images/featured_courses_background.png')] bg-no-repeat bg-gray-100 bg-cover bg-center"
+        >
+          <div class="container mx-auto">
+            <div class="our-course__title pb-10">
+              <div class="flex flex-wrap">
+                <div class="our-course__title">
+                  <div class="mb-5">
+                    <h5
+                      class="under-title relative text-secondary text-[18px] font-bold pb-[12px]"
+                    >
+                      Our Course
+                    </h5>
+                    <h2 class="text-[35px] text-[#23252a] font-bold pt-4">
+                      Featured Courses
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="our-course-slider relative"></div>
+          </div>
+        </section>
+        <!-- video -->
+        <section
+          id="video"
+          class="relative w-full h-full bg-[url('./assets/images/bg-video.jpg')] bg-center bg-cover bg-no-repeat"
+        >
+          <div class="container mx-auto pt-24 pb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div
+                class="video-left flex flex-col justify-center items-center lg:items-start mb-16 z-10"
+              >
+                <div class="text-left">
+                  <a href="#">
+                    <i
+                      class="fa-solid fa-play w-[100px] h-[100px] leading-[100px] text-center text-2xl bg-primary text-white rounded-[50%] shadow-lg shadow-primary"
+                    >
+                    </i>
+                  </a>
+                </div>
+              </div>
+              <div class="video-right lg:pl-20">
+                <div class="relative z-10">
+                  <div class="video-title">
+                    <h3 class="text-4xl text-white pb-4 font-bold">
+                      Our Facilities
+                    </h3>
+                  </div>
+                  <ul>
+                    <li>
+                      <div
+                        class="pt-[55px] overflow-hidden flex flex-col lg:flex-row"
+                      >
+                        <div class="float-left inline-block pr-[30px]">
+                          <img
+                            src="./assets/images/facilites_certificate.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="w-full float-left text-white">
+                          <h4 class="text-2xl pb-4 font-bold">
+                            Global Certificate
+                          </h4>
+                          <p class="text-base leading-[28px]">
+                            Gravida nibh vel velit auctor aliquetn auci elit
+                            cons solliazcitudirem sem quibibendum sem nibhutis.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="pt-[55px] overflow-hidden flex flex-col lg:flex-row"
+                      >
+                        <div class="float-left inline-block pr-[30px]">
+                          <img
+                            src="./assets/images/facilites_support.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="w-full float-left text-white">
+                          <h4 class="text-2xl pb-4 font-bold">
+                            Alumni Support
+                          </h4>
+                          <p class="text-base leading-[28px]">
+                            Gravida nibh vel velit auctor aliquetn auci elit
+                            cons solliazcitudirem sem quibibendum sem nibhutis.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        class="pt-[55px] overflow-hidden flex flex-col lg:flex-row"
+                      >
+                        <div class="float-left inline-block pr-[30px]">
+                          <img
+                            src="./assets/images/facilites_book.png"
+                            alt="icon"
+                          />
+                        </div>
+                        <div class="w-full float-left text-white">
+                          <h4 class="text-2xl pb-4 font-bold">
+                            Books & Library
+                          </h4>
+                          <p class="text-base leading-[28px]">
+                            Gravida nibh vel velit auctor aliquetn auci elit
+                            cons solliazcitudirem sem quibibendum sem nibhutis.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute top-0 right-0 h-full w-full lg:w-[50%] bg-[#06294c] opacity-90"
+          ></div>
+        </section>
+        <!-- Teachers -->
+        <section id="teachers" class="pt-24 pb-24">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="teacher-left lg:pr-[90px]">
+                <div class="flex flex-wrap">
+                  <div class="teacher-title mb-5">
+                    <h5
+                      class="under-title relative text-secondary text-[18px] font-bold pb-[12px]"
+                    >
+                      Teachers
+                    </h5>
+                    <h2
+                      class="text-[35px] lg:text-[38px] xl:text-[48px] text-[#23252a] font-bold pt-[10px]"
+                    >
+                      Meet our Teachers
+                    </h2>
+                  </div>
+                  <div class="teacher-left__content">
+                    <p
+                      class="text-base font-normal text-[#7a7a7a] leading-6 lg:leading-7"
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Labore corporis praesentium, neque soluta nesciunt,
+                      accusamus autem perferendis esse sequi cupiditate
+                      temporibus ipsa animi reprehenderit quam similique tempora
+                      voluptates aut quis.
+                      <br />
+                      <br />
+                      Tenetur, ipsam. Architecto doloremque iusto dolores, minus
+                      placeat minima consequatur sed saepe deserunt nostrum
+                      provident voluptatum in sit, esse similique! Tenetur,
+                      eligendi?
+                      <br />
+                      <br />
+                      Veritatis ratione suscipit temporibus, sed optio pariatur
+                      aspernatur accusamus maiores, ipsam magnam dolor iste
+                      placeat minima consequatur sed saepe?
+                    </p>
+                    <a
+                      href="#"
+                      class="main-btn mt-[30px] hover:text-white hover:bg-secondary"
+                    >
+                      Career with Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="teacher-right">
+                <div class="mt-[20px]">
+                  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-8">
+                    <div class="relative mt-[36px] text-center">
+                      <div class="rounded-[5px] lg:overflow-hidden">
+                        <img
+                          src="./assets/images/teacher_1.jpg"
+                          alt="Teachers"
+                          class="transition-all duration-300 ease-linear w-full lg:hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        class="flex flex-col absolute bottom-6 left-0 right-0 w-[60%] rounded-[5px] m-auto p-3 bg-white"
+                      >
+                        <a href="#">
+                          <h6
+                            class="font-bold text-base hover:text-primary transition-all duration-300 ease-linear"
+                          >
+                            Damian Green
+                          </h6>
+                        </a>
+                        <span class="text-sm text-[#8a8a8a]">Chairman</span>
+                      </div>
+                    </div>
+                    <div class="relative mt-[36px] text-center">
+                      <div class="rounded-[5px] lg:overflow-hidden">
+                        <img
+                          src="./assets/images/teacher_2.jpg"
+                          alt="Teachers"
+                          class="transition-all duration-300 ease-linear w-full lg:hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        class="flex flex-col absolute bottom-6 left-0 right-0 w-[60%] rounded-[5px] m-auto p-3 bg-white"
+                      >
+                        <a href="#">
+                          <h6
+                            class="font-bold text-base hover:text-primary transition-all duration-300 ease-linear"
+                          >
+                            Rebik Align
+                          </h6>
+                        </a>
+                        <span class="text-sm text-[#8a8a8a]">Art Teacher</span>
+                      </div>
+                    </div>
+
+                    <div class="relative mt-[36px] text-center">
+                      <div class="rounded-[5px] lg:overflow-hidden">
+                        <img
+                          src="./assets/images/teacher_3.jpg"
+                          alt="Teachers"
+                          class="transition-all duration-300 ease-linear w-full lg:hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        class="flex flex-col absolute bottom-6 left-0 right-0 w-[60%] rounded-[5px] m-auto p-3 bg-white"
+                      >
+                        <a href="#">
+                          <h6
+                            class="font-bold text-base hover:text-primary transition-all duration-300 ease-linear"
+                          >
+                            Hanna Ben
+                          </h6>
+                        </a>
+                        <span class="text-sm text-[#8a8a8a]">Teacher</span>
+                      </div>
+                    </div>
+                    <div class="relative mt-[36px] text-center">
+                      <div class="rounded-[5px] lg:overflow-hidden">
+                        <img
+                          src="./assets/images/teacher_4.jpg"
+                          alt="Teachers"
+                          class="transition-all duration-300 ease-linear w-full lg:hover:scale-105"
+                        />
+                      </div>
+                      <div
+                        class="flex flex-col absolute bottom-6 left-0 right-0 w-[60%] rounded-[5px] m-auto p-3 bg-white"
+                      >
+                        <a href="#">
+                          <h6
+                            class="font-bold text-base hover:text-primary transition-all duration-300 ease-linear"
+                          >
+                            Mark Alen
+                          </h6>
+                        </a>
+                        <span class="text-sm text-[#8a8a8a]">Teacher</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Feedback -->
+        <section
+          id="feedback"
+          class="relative bg-[url('./assets/images/feedback-bg.jpg')] bg-no-repeat bg-center bg-cover before:absolute before:opacity-90 before:bg-[#07294d] before:content-[''] before:h-full before:left-0 before:top-0 before:w-full before:z-10"
+        >
+          <div class="container mx-auto relative pt-24 lg:pb-24 pb-16 z-20">
+            <div class="flex flex-wrap">
+              <div class="feedback__title">
+                <div class="mb-5">
+                  <h5
+                    class="under-title text-white relative text-[18px] font-bold pb-[12px]"
+                  >
+                    Feedback
+                  </h5>
+                  <h2
+                    class="text-[35px] lg:text-[48px] text-white font-bold pt-4"
+                  >
+                    What Student Say
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-slider pt-5">
+              <div class="fb-item inline-block mb-4 relative text-white">
+                <div
+                  class="fb-thumnail inline-block absolute left-0 top-[44%] lg:top-[60%] -translate-y-[110%]"
+                >
+                  <div class="fb-img">
+                    <img
+                      src="./assets/images/teacher_1.jpg"
+                      class="block w-[90px] h-[90px] rounded-[3px] object-cover"
+                      alt=""
+                    />
+                  </div>
+                  <div class="quote absolute right-[-22px] top-[-22px]">
+                    <i
+                      class="fa-solid fa-quote-right w-[45px] h-[45px] leading-[45px] text-center bg-primary rounded-[50%] text-secondary text-[18px]"
+                    >
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="fb-content text-white pt-[140px] md:pt-36 pr-8 md:pr-0 lg:pt-12 lg:pl-36"
+                >
+                  <p class="pb-8 pr-5 md:pr-2 md:pr-0 text-left">
+                    I am grateful for your wonderful course! Your tutors are the
+                    best, and I am completely satisfied with the level of
+                    professional teaching.
+                  </p>
+                  <h6 class="font-bold text-[18px] text-left pb-1">
+                    James Smith
+                  </h6>
+                  <p class="text-left">Apps Develop</p>
+                </div>
+              </div>
+              <div class="fb-item inline-block mb-4 relative text-white">
+                <div
+                  class="fb-thumnail inline-block absolute left-0 top-[44%] lg:top-[60%] -translate-y-[110%]"
+                >
+                  <div class="fb-img">
+                    <img
+                      src="./assets/images/teacher_1.jpg"
+                      class="block w-[90px] h-[90px] rounded-[3px] object-cover"
+                      alt=""
+                    />
+                  </div>
+                  <div class="quote absolute right-[-22px] top-[-22px]">
+                    <i
+                      class="fa-solid fa-quote-right w-[45px] h-[45px] leading-[45px] text-center bg-primary rounded-[50%] text-secondary text-[18px]"
+                    >
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="fb-content text-white pt-[140px] lg:pt-12 lg:pl-36 md:pr-0 pr-8"
+                >
+                  <p class="pb-8 pr-5 md:pr-2 text-left">
+                    I am grateful for your wonderful course! Your tutors are the
+                    best, and I am completely satisfied with the level of
+                    professional teaching.
+                  </p>
+                  <h6 class="font-bold text-[18px] text-left pb-1">
+                    James Smith
+                  </h6>
+                  <p class="text-left">Apps Develop</p>
+                </div>
+              </div>
+              <div class="fb-item inline-block mb-4 relative text-white">
+                <div
+                  class="fb-thumnail inline-block absolute left-0 top-[44%] lg:top-[60%] -translate-y-[110%]"
+                >
+                  <div class="fb-img">
+                    <img
+                      src="./assets/images/teacher_1.jpg"
+                      class="block w-[90px] h-[90px] rounded-[3px] object-cover"
+                      alt=""
+                    />
+                  </div>
+                  <div class="quote absolute right-[-22px] top-[-22px]">
+                    <i
+                      class="fa-solid fa-quote-right w-[45px] h-[45px] leading-[45px] text-center bg-primary rounded-[50%] text-secondary text-[18px]"
+                    >
+                    </i>
+                  </div>
+                </div>
+                <div
+                  class="fb-content text-white pt-[140px] lg:pt-12 lg:pl-36 md:pr-0 pr-8"
+                >
+                  <p class="pb-8 pr-5 md:pr-2 text-left">
+                    I am grateful for your wonderful course! Your tutors are the
+                    best, and I am completely satisfied with the level of
+                    professional teaching.
+                  </p>
+                  <h6 class="font-bold text-[18px] text-left pb-1">
+                    James Smith
+                  </h6>
+                  <p class="text-left">Apps Develop</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Book Store -->
+        <section
+          id="book-store"
+          class="pt-24 lg:pb-[80px] pb-[60px] bg-[url('./assets/images/featured_courses_background.png')] bg-no-repeat bg-gray-100 bg-cover bg-center"
+        >
+          <div class="container mx-auto">
+            <div class="book-store__title pb-10">
+              <div class="book-store__title">
+                <div class="mb-5">
+                  <h5
+                    class="under-title relative text-secondary text-[18px] font-bold pb-[12px]"
+                  >
+                    Book Store
+                  </h5>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+                  <div>
+                    <h2
+                      class="text-[35px] lg:text-[38px] xl:text-[48px] text-[#23252a] font-bold"
+                    >
+                      Publications
+                    </h2>
+                  </div>
+                  <div class="mt-8 lg:flex lg:justify-end lg:mt-0">
+                    <a href="#" class="main-btn"> All Products </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="book-list grid grid-cols-2 gap-x-8 lg:grid-cols-4 lg:gap-x-12"
+            >
+              <div class="book-item mb-8">
+                <div class="book-item__inner relative bg-gray-200 text-center">
+                  <div class="book-hover"></div>
+                  <a href="#">
+                    <img
+                      src="./assets/images/book.jpg"
+                      alt=""
+                      class="lg:h-[280px] md:h-[400px] py-9 block object-contain"
+                    />
+                  </a>
+                  <ul
+                    class="book-item__inner-cart absolute top-[50%] left-0 translate-y-[-50%] w-full opacity-0"
+                  >
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="book-price text-center flex flex-col">
+                  <a href="#" class="pt-5 mb-4">
+                    <h4
+                      class="inline-block font-bold text-[22px] text-secondary"
+                    >
+                      Book 9
+                    </h4>
+                  </a>
+                  <span
+                    class="inline-block text-[18px] text-[#505050] font-semibold"
+                  >
+                    &#8356; 45
+                  </span>
+                </div>
+              </div>
+              <div class="book-item mb-8">
+                <div class="book-item__inner relative bg-gray-200 text-center">
+                  <div class="book-hover"></div>
+                  <a href="#">
+                    <img
+                      src="./assets/images/book2.jpg"
+                      alt=""
+                      class="lg:h-[280px] md:h-[400px] py-9 block object-contain"
+                    />
+                  </a>
+                  <ul
+                    class="book-item__inner-cart absolute top-[50%] left-0 translate-y-[-50%] w-full opacity-0"
+                  >
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="book-price text-center flex flex-col">
+                  <a href="#" class="pt-5 mb-4">
+                    <h4
+                      class="inline-block font-bold text-[22px] text-secondary"
+                    >
+                      React JS
+                    </h4>
+                  </a>
+                  <span
+                    class="inline-block text-[18px] text-[#505050] font-semibold"
+                  >
+                    &#8356; 20
+                  </span>
+                </div>
+              </div>
+              <div class="book-item mb-8">
+                <div class="book-item__inner relative bg-gray-200 text-center">
+                  <div class="book-hover"></div>
+                  <a href="#">
+                    <img
+                      src="./assets/images/book3.jpg"
+                      alt=""
+                      class="lg:h-[280px] md:h-[400px] py-9 block object-contain"
+                    />
+                  </a>
+                  <ul
+                    class="book-item__inner-cart absolute top-[50%] left-0 translate-y-[-50%] w-full opacity-0"
+                  >
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="book-price text-center flex flex-col">
+                  <a href="#" class="pt-5 mb-4">
+                    <h4
+                      class="inline-block font-bold text-[22px] text-secondary"
+                    >
+                      Learn JavaScript
+                    </h4>
+                  </a>
+                  <span
+                    class="inline-block text-[18px] text-[#505050] font-semibold"
+                  >
+                    &#8356; 65
+                  </span>
+                </div>
+              </div>
+              <div class="book-item mb-8">
+                <div class="book-item__inner relative bg-gray-200 text-center">
+                  <div class="book-hover"></div>
+                  <a href="#">
+                    <img
+                      src="./assets/images/book4.jpg"
+                      alt=""
+                      class="lg:h-[280px] md:h-[400px] py-9 block object-contain"
+                    />
+                  </a>
+                  <ul
+                    class="book-item__inner-cart absolute top-[50%] left-0 translate-y-[-50%] w-full opacity-0"
+                  >
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li class="mx-[5px]">
+                      <a
+                        href="#"
+                        class="inline-block border-solid border-2 border-primary text-base text-primary w-[35px] h-[35px] leading-[35px] text-center transition-all ease-linear duration-300 hover:bg-primary hover:text-secondary"
+                      >
+                        <i class="fa-solid fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="book-price text-center flex flex-col">
+                  <a href="#" class="pt-5 mb-4">
+                    <h4
+                      class="inline-block font-bold text-[22px] text-secondary"
+                    >
+                      Book 6
+                    </h4>
+                  </a>
+                  <span
+                    class="inline-block text-[18px] text-[#505050] font-semibold"
+                  >
+                    &#8356; 90
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Latest News -->
+        <section id="news" class="lg:pt-24 pt-[60px] lg:pb-24 pb-8">
+          <div class="container mx-auto">
+            <div class="news__title pb-10">
+              <div class="flex flex-wrap">
+                <div class="news__title">
+                  <div class="mb-5">
+                    <h5
+                      class="under-title relative text-secondary text-[18px] font-bold pb-[12px]"
+                    >
+                      From the News
+                    </h5>
+                    <h2
+                      class="text-[35px] xl:text-[48px] text-[#23252a] font-bold pt-4"
+                    >
+                      Latest News
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-list grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div class="news-item">
+                <div class="news-item__image overflow-hidden">
+                  <a
+                    href="#"
+                    class="block transition-all duration-300 ease-linear"
+                  >
+                    <img
+                      src="./assets/images/news_image_1.jpg"
+                      alt=""
+                      class="block rounded-[5px] object-cover transition-all duration-300 ease-linear hover:scale-110"
+                    />
+                  </a>
+                </div>
+                <div class="news-item__content py-6">
+                  <div class="news-item__icon">
+                    <ul class="flex">
+                      <li>
+                        <a href="#" class="inline-block text-gray-400 pr-4">
+                          <i
+                            class="fa-solid fa-clock transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>17 JULY 2019</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="inline-block text-gray-400">
+                          <i
+                            class="fa-solid fa-user transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>MARK ALEN</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="inline-block">
+                    <h4
+                      class="font-semibold text-[24px] text-black py-4 transition-all duration-300 ease-linear hover:text-primary"
+                    >
+                      Basic English Speaking And Grammar
+                    </h4>
+                  </a>
+                  <p class="text-base text-gray-700">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur?
+                  </p>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-item__image overflow-hidden">
+                  <a
+                    href="#"
+                    class="block transition-all duration-300 ease-linear"
+                  >
+                    <img
+                      src="./assets/images/news_image_2.jpg"
+                      alt=""
+                      class="block rounded-[5px] object-cover transition-all duration-300 ease-linear hover:scale-110"
+                    />
+                  </a>
+                </div>
+                <div class="news-item__content py-6">
+                  <div class="news-item__icon">
+                    <ul class="flex">
+                      <li>
+                        <a href="#" class="inline-block text-gray-400 pr-4">
+                          <i
+                            class="fa-solid fa-clock transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>17 JULY 2019</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="inline-block text-gray-400">
+                          <i
+                            class="fa-solid fa-user transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>MARK ALEN</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="inline-block">
+                    <h4
+                      class="font-semibold text-[24px] text-black py-4 transition-all duration-300 ease-linear hover:text-primary"
+                    >
+                      How to Learn Faster and Remember
+                    </h4>
+                  </a>
+                  <p class="text-base text-gray-700">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur?
+                  </p>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-item__image overflow-hidden">
+                  <a
+                    href="#"
+                    class="block transition-all duration-300 ease-linear"
+                  >
+                    <img
+                      src="./assets/images/news_image_3.jpeg"
+                      alt=""
+                      class="block rounded-[5px] object-cover transition-all duration-300 ease-linear hover:scale-110"
+                    />
+                  </a>
+                </div>
+                <div class="news-item__content py-6">
+                  <div class="news-item__icon">
+                    <ul class="flex">
+                      <li>
+                        <a href="#" class="inline-block text-gray-400 pr-4">
+                          <i
+                            class="fa-solid fa-clock transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>17 JULY 2019</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="inline-block text-gray-400">
+                          <i
+                            class="fa-solid fa-user transition-all duration-300 ease-linear text-primary"
+                          >
+                          </i>
+                          <span>MARK ALEN</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="inline-block">
+                    <h4
+                      class="font-semibold text-[24px] text-black py-4 transition-all duration-300 ease-linear hover:text-primary"
+                    >
+                      Free Online Courses from Top Universities
+                    </h4>
+                  </a>
+                  <p class="text-base text-gray-700">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur, sit amet consectetur adipisicing elit.
+                    Molestiae, pariatur?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- logo-contact -->
+        <section
+          id="logo-contact"
+          class="xl:pt-10 xl:pb-[80px] py-4 bg-[url('./assets/images/featured_courses_background.png')] bg-no-repeat bg-gray-100 bg-cover bg-center"
+        >
+          <div class="container mx-auto">
+            <div class="logo-contact">
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon1.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon2.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon3.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon4.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon5.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon1.png" alt="" />
+                </a>
+              </div>
+              <div class="logo-contact__item text-center">
+                <a href="">
+                  <img src="./assets/images/icon2.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <!-- top-footer -->
+        <section
+          id="footer-top"
+          class="pt-[80px] lg:pt-[40px] pb-[80px] bg-secondary"
+        >
+          <div class="container mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 md:grid-cols-2 lg:gap-4 text-white"
+            >
+              <div class="lg:col-span-4">
+                <div class="footer-top__about lg:mt-[40px] pr-[50px]">
+                  <div class="footer-top__logo">
+                    <a href="#">
+                      <img src="./assets/images/logo-2.png" alt="Logo" />
+                    </a>
+                  </div>
+                  <p class="pt-4 text-base leading-[28px]">
+                    Gravida nibh vel velit auctor aliquetn quibibendum auci elit
+                    cons equat ipsutis sem nibh id elit. Duis sed odio sit amet
+                    nibh vulputate.
+                  </p>
+                  <ul class="mt-[20px]">
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-facebook-f"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-youtube"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-instagram"> </i>
+                      </a>
+                    </li>
+                    <li class="mr-4 inline-block">
+                      <a
+                        href="#"
+                        class="inline-block w-[35px] h-[35px] leading-[35px] text-white text-center rounded-[50%] bg-[#021d3a] hover:text-primary transition-all duration-300 ease-linear"
+                      >
+                        <i class="fa-brands fa-twitter"> </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="lg:col-span-3">
+                <div class="footer-top__link lg:mt-[40px]">
+                  <div class="ft__link--title my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Feature Link</h6>
+                  </div>
+                  <div class="grid grid-cols-2">
+                    <ul class="grid grid-cols-1">
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            About Us
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Graduation
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Scholarship
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Contact
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Result
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="grid grid-cols-1">
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Admissions
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            International
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Teachers
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Alumni
+                          </span>
+                        </a>
+                      </li>
+                      <li class="leading-[36px]">
+                        <a
+                          href="#"
+                          class="text-base ease-linear hover:text-primary"
+                        >
+                          <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                          <span
+                            class="inline-block hover:pl-2 transition-all duration-300"
+                          >
+                            Events
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:col-span-2">
+                <div class="footer-top__link lg:mt-[40px]">
+                  <div class="ft__link--title my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Support</h6>
+                  </div>
+                  <ul class="flex flex-col">
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Languages
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          WordPress
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Privacy
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          FAQs
+                        </span>
+                      </a>
+                    </li>
+                    <li class="leading-[36px]">
+                      <a
+                        href="#"
+                        class="text-base ease-linear hover:text-primary"
+                      >
+                        <i class="fa fa-angle-right mr-2 text-primary"> </i>
+                        <span
+                          class="inline-block hover:pl-2 transition-all duration-300"
+                        >
+                          Support
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="lg:col-span-3">
+                <div class="footer-top__address lg:mt-[40px]">
+                  <div class="ft__address--contact my-8 lg:mt-0">
+                    <h6 class="text-[18px] font-bold">Contact Us</h6>
+                  </div>
+                  <ul class="text-base md:grid md:grid-cols-1">
+                    <li>
+                      <p class="pb-4">
+                        203, Envato Labs, Behind Alis Steet, Melboure,
+                        Australia.
+                      </p>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa fa-phone mr-2"></i>
+                        <span>+1 23-4567-8920</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa-solid fa-envelope mr-2"></i>
+                        <span>info@yourmail.com</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="inline-block py-2">
+                        <i class="fa-solid fa-globe mr-2"></i>
+                        <span>www.yourdomain.com</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="footer-bottom" class="pt-6 pb-8 bg-[#021d3a] text-white">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="lg:float-left text-center lg:text-left">
+                <p>&copy; 2021 Pixelcurve. All rights reversed.</p>
+              </div>
+              <div class="float-right hidden lg:inline-block">
+                <ul class="flex justify-end">
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">Languages</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">WordPress</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">Privacy</a>
+                  </li>
+                  <li
+                    class="px-3 relative text-4 before:absolute before:h-[14px] before:w-[1px] before:bg-[#edf0f2] before:content-[''] before:right-0 before:top-[5px]"
+                  >
+                    <a href="#" class="hover:text-primary">FAQs</a>
+                  </li>
+                  <li class="px-3">
+                    <a href="#" class="hover:text-primary">Support</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+      <div id="back-to-top">
+        <a
+          href="#"
+          class="back-to-top fixed bg-primary bottom-10 right-10 text-center w-10 h-10 leading-10 text-secondary rounded-[50%] opacity-0 z-50"
+        >
+          <i class="fa-solid fa-angle-up"></i>
+        </a>
+      </div>
+    </div>
+    <!-- import file.js -->
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/callApi.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

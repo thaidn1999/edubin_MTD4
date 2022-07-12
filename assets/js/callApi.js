@@ -167,7 +167,5 @@ const renderCoure = (courses) => {
   }
 };
 
-$(document).ready(() => {
-  getCourses();
-})
+$(document).ready(getCourses())
 

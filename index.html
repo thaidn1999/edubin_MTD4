@@ -60,6 +60,47 @@
     <title>Edubin</title>
   </head>
   <body>
+    <div
+      class="video-pop-up-wrap hidden fixed w-full h-full top-0 left-0 bg-[rgba(0,0,0,.8)] z-[999999] cursor-pointer"
+    >
+      <div class="vd-content max-w-[680px] block my-0 mx-auto h-full relative">
+        <span
+          class="vd-close absolute top-[64px] right-0 my-auto cursor-pointer text-white"
+        >
+          <i class="fa-solid fa-xmark text-[28px]"> </i>
+        </span>
+        <iframe
+          class="absolute max-w-full w-full h-[480px] block top-0 bottom-0 my-auto bg-white p-2 rounded-[5px] border-0"
+          src="https://www.youtube.com/embed/bRRtdzJH1oE?autoplay=0"
+          allowfullscreen=""
+        >
+        </iframe>
+      </div>
+    </div>
+    <!-- search box -->
+    <div
+      class="search-box hidden fixed top-0 left-0 w-full h-full bg-[rgba(7,41,77,0.5)] z-[9999999]"
+    >
+      <div class="search-form">
+        <div class="closebtn absolute top-7 right-14 cursor-pointer w-8 h-8">
+          <span class="close-icon text-white w-7 h-7">
+            <i class="fa-solid fa-xmark text-[36px]"> </i>
+          </span>
+        </div>
+        <form id="form-search">
+          <input
+            type="text"
+            placeholder="Search by keyword"
+            class="absolute w-[50%] h-[50px] top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-white border-2 border-solid border-secondary text-secondary pl-[20px] rounded-[30px] forcus:outline-0"
+          />
+          <button
+            class="absolute top-[50%] left-[72%] -translate-x-[50%] -translate-y-[50%] p-0 border-0; bg-[transparent] text-secondary cursor-pointer text-base"
+          >
+            <i class="fa fa-search text-secondary"></i>
+          </button>
+        </form>
+      </div>
+    </div>
     <div id="wrapper" class="relative">
       <header id="header" class="bg-white fixed w-full z-50 left-0 top-0">
         <!-- header-contact -->
@@ -147,9 +188,12 @@
             <div class="header-main__icon inline-block ml-[30px] float-right">
               <ul>
                 <li class="py-7 mr-[2px]">
-                  <a href="#" id="search-icon" class="relative text-base pr-2">
+                  <span
+                    id="search-icon"
+                    class="relative text-base pr-2 cursor-pointer"
+                  >
                     <i class="fa fa-search text-secondary text-[24px]"></i>
-                  </a>
+                  </span>
                 </li>
                 <li class="py-7">
                   <a
@@ -383,21 +427,6 @@
         </div>
       </header>
       <main id="content-page" class="mt-20 sm:mt-[140px]">
-        <!-- search box -->
-        <div class="search-box hidden">
-          <div class="search-form">
-            <div class="closebtn">
-              <div class="bar1"></div>
-              <div class="bar3"></div>
-            </div>
-            <form action="#">
-              <input type="text" placeholder="Search by keyword" />
-              <button>
-                <i class="fa fa-search text-secondary"></i>
-              </button>
-            </form>
-          </div>
-        </div>
         <!-- banner -->
         <section id="banner-slider">
           <div class="slider-list block overflow-hidden w-full z-10">
@@ -832,12 +861,12 @@
                 class="video-left flex flex-col justify-center items-center lg:items-start mb-16 z-10"
               >
                 <div class="text-left">
-                  <a href="#">
+                  <div class="video-pop-up cursor-pointer">
                     <i
                       class="fa-solid fa-play w-[100px] h-[100px] leading-[100px] text-center text-2xl bg-primary text-white rounded-[50%] shadow-lg shadow-primary"
                     >
                     </i>
-                  </a>
+                  </div>
                 </div>
               </div>
               <div class="video-right lg:pl-20">

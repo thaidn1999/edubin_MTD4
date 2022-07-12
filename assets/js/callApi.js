@@ -170,3 +170,4 @@ const renderCoure = (courses) => {
 window.onload = () => {
   getCourses();
 }
+

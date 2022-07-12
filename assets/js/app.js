@@ -1,13 +1,18 @@
 let isToggle = false;
 //search-btn
 const searchIcon = document.querySelector("#search-icon");
+const formSearch = document.querySelector('#form-search');
 const searchBox = document.querySelector(".search-box");
-const closeBtn = document.querySelector(".closebtn");
 searchIcon.onclick = () => {
-  searchBox.style.display = "block";
+  searchBox.classList.remove('hidden')
+  searchBox.classList.add('block')
 }
-closeBtn.onclick = () => {
-  searchBox.style.display = "none";
+formSearch.onclick = (e) => {
+  e.stopPropagation();
+}
+searchBox.onclick = () => {
+  searchBox.classList.remove('block')
+  searchBox.classList.add('hidden')
 }
 
 // back-to-top
@@ -63,4 +68,26 @@ for (let i = 0; i < dropMenuItem.length; i++) {
       isToggle = false
     }
   }
+}
+
+// video pop up
+
+const videoPopUp = document.querySelector('.video-pop-up');
+const videoPopUpWrap = document.querySelector('.video-pop-up-wrap');
+const videoPopUpContent = document.querySelector('.vd-content');
+const closePopUp = document.querySelector('.vd-close');
+videoPopUp.onclick = () => {
+  videoPopUpWrap.classList.remove('hidden')
+  videoPopUpWrap.classList.add('block')
+}
+videoPopUpContent.onclick = (event) => {
+  event.stopPropagation();
+}
+closePopUp.onclick = () => {
+  videoPopUpWrap.classList.remove('block')
+  videoPopUpWrap.classList.add('hidden')
+}
+videoPopUpWrap.onclick = () => {
+  videoPopUpWrap.classList.remove('block')
+  videoPopUpWrap.classList.add('hidden')
 }

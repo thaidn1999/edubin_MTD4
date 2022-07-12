@@ -167,7 +167,7 @@ const renderCoure = (courses) => {
   }
 };
 
-window.onload = () => {
+$(document).ready(() => {
   getCourses();
-}
+})
 
